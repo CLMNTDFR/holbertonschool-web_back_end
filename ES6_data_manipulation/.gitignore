@@ -1,0 +1,29 @@
+# Dépendances
+/node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environnement d'exécution
+.env
+
+# Constructeur
+/dist
+
+# Cache du système d'exploitation
+.DS_Store
+
+# IDE - VSCode
+.vscode
+
+# Fichiers de débogage
+npm-debug.log
+*.log
+
+# Fichiers de production
+build/
+
+# Fichiers de configuration
+.next/
