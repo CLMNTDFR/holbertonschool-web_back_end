@@ -10,13 +10,13 @@
 
 ## ➤ Menu:
 
-* [➤ ES6_basic](https://github.com/Khadaassi/holbertonschool-web_back_end/tree/main/ES6_basic)
-* [➤ ES6_classes](https://github.com/Khadaassi/holbertonschool-web_back_end/tree/main/ES6_classes)
-* [➤ ES6_data_manipulation](https://github.com/Khadaassi/holbertonschool-web_back_end/tree/main/ES6_data_manipulation)
-* [➤ ES6_promise](https://github.com/khadaassi/holbertonschool-web_back_end/tree/main/ES6_promise)
-* [➤ NoSQL](https://github.com/khadaassi/holbertonschool-web_back_end/tree/main/NoSQL)
-* [➤ pagination](https://github.com/khadaassi/holbertonschool-web_back_end/tree/main/pagination)
-* [➤ python_async_comprehension](https://github.com/khadaassi/holbertonschool-web_back_end/tree/main/python_async_comprehension)
-* [➤ python_async_function](https://github.com/khadaassi/holbertonschool-web_back_end/tree/main/python_async_function)
-* [➤ python_variable_annotations](https://github.com/khadaassi/holbertonschool-web_back_end/tree/main/python_variable_annotations)
+* [➤ ES6_basic](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/ES6_basic)
+* [➤ ES6_classes](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/ES6_classes)
+* [➤ ES6_data_manipulation](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/ES6_data_manipulation)
+* [➤ ES6_promise](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/ES6_promise)
+* [➤ NoSQL](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/NoSQL)
+* [➤ pagination](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/pagination)
+* [➤ python_async_comprehension](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/python_async_comprehension)
+* [➤ python_async_function](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/python_async_function)
+* [➤ python_variable_annotations](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/python_variable_annotations)
 ----------
