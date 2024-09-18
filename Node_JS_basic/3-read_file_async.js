@@ -1,60 +1,43 @@
-const fs = require('fs').promises;
+const fs = require('fs');
 
-async function countStudents(filePath) {
+function countStudents(filePath) {
   try {
-    // Read the file asynchronously
-    const data = await fs.readFile(filePath, 'utf8');
+    // Lire le fichier de manière synchrone
+    const data = fs.readFileSync(filePath, 'utf8');
+    // Diviser les lignes par retour à la ligne
+    const lines = data.split('\n').filter((line) => line.trim() !== '');
 
-    // Split the CSV data into lines
-    const lines = data.split('\n');
+    // Vérifier qu'il y a des étudiants
+    if (lines.length <= 1) {
+      console.log('Number of students: 0');
+      return;
+    }
 
-    // Initialize an object to store the count for each field
-    const fieldCounts = {};
+    // Enlever l'en-tête et créer un tableau pour les étudiants
+    const students = lines.slice(1).map((line) => {
+      const [firstname, , , field] = line.split(','); // Ignorer lastname et age
+      return { firstname, field };
+    });
 
-    // Iterate through each line
-    lines.forEach((line) => {
-      // Skip empty lines
-      if (line.trim() !== '') {
-        // Split the line into fields
-        const fields = line.split(',');
-
-        // Extract the field name (assuming it's the first element in each line)
-        const fieldName = fields[0];
-
-        // Increment the count for the field in the fieldCounts object
-        fieldCounts[fieldName] = (fieldCounts[fieldName] || 0) + 1;
+    // Compter les étudiants par domaine
+    const fieldCount = {};
+    students.forEach((student) => {
+      if (!fieldCount[student.field]) {
+        fieldCount[student.field] = [];
       }
+      fieldCount[student.field].push(student.firstname);
     });
 
-    // Log the results
-    console.log('Number of students:', lines.length - 1); // Subtract 1 to exclude the header
-    Object.keys(fieldCounts).forEach((field) => {
-      const count = fieldCounts[field];
-      const list = lines
-        .filter((line) => line.startsWith(field))
-        .map((line) => line.split(',')[1])
-        .join(', ');
+    // Afficher le nombre total d'étudiants
+    console.log(`Number of students: ${students.length}`);
 
-      console.log(`Number of students in ${field}: ${count}. List: ${list}`);
-    });
-
-    // Return a resolved Promise
-    return Promise.resolve();
+    // Afficher les étudiants par domaine
+    for (const [field, names] of Object.entries(fieldCount)) {
+      console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
+    }
   } catch (error) {
-    // Log and throw an error if reading the file fails
-    console.error('Cannot load the database:', error.message);
-    throw error;
+    throw new Error('Cannot load the database');
   }
 }
 
-// Example usage
-countStudents('database.csv')
-  .then(() => {
-    console.log('Done!');
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
-console.log('After!');
 module.exports = countStudents;
