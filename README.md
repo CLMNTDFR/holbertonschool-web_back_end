@@ -19,4 +19,5 @@
 * [➤ python_async_comprehension](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/python_async_comprehension)
 * [➤ python_async_function](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/python_async_function)
 * [➤ python_variable_annotations](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/python_variable_annotations)
+* [➤ 0x0B_redis_basic](https://github.com/CLMNTDFR/holbertonschool-web_back_end/tree/main/0x0B_redis_basic)
 ----------
