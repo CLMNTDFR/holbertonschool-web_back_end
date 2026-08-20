@@ -1,9 +1,22 @@
 #!/usr/bin/env python3
 """Redis cache helpers for storing data with random keys."""
 import uuid
-from typing import Callable, Optional, Union
+from functools import wraps
+from typing import Any, Callable, Optional, Union
 
 import redis
+
+
+def count_calls(method: Callable) -> Callable:
+    """Count how many times a Cache method is called in Redis."""
+
+    @wraps(method)
+    def wrapper(self, *args: Any, **kwargs: Any) -> Any:
+        """Increment the call counter then run the original method."""
+        self._redis.incr(method.__qualname__)
+        return method(self, *args, **kwargs)
+
+    return wrapper
 
 
 class Cache:
@@ -14,6 +27,7 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
+    @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """Save data in Redis under a new uuid key and return that key."""
         key = str(uuid.uuid4())
